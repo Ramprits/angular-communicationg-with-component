@@ -16,7 +16,7 @@ import { ProductService } from './components/product/product.service';
     { path: '', component: HomeComponent },
     { path: 'products', component: ProductComponent },
     { path: 'addProduct', component: AddProductComponent },
-    { path: 'auth', loadChildren: "./components/auth/auth/auth.module#AuthModule" },
+    { path: 'auth', loadChildren: "./components/auth/auth.module#AuthModule" },
   ])],
   declarations: [AppComponent, NavbarComponent, HomeComponent, ProductComponent, AddProductComponent],
   bootstrap: [AppComponent],
