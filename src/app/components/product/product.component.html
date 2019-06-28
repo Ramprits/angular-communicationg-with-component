@@ -3,6 +3,9 @@
 	<table class="table is-bordered is-fullwidth" *ngIf="filteredProducts?.length > 0">
 		<thead>
 			<tr>
+        <th>
+          Image
+        </th>
 				<th>
 					Name
 				</th>
@@ -19,6 +22,9 @@
 		</thead>
 		<tbody>
 			<tr *ngFor="let product of filteredProducts">
+        <td>
+          <img [src]="product.picture.url" class="image is-128x128" [alt]="product.picture.name">
+        </td>
 				<td>
 					{{product.name}}
 				</td>
