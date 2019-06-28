@@ -2,43 +2,43 @@
 	<input type="text" [(ngModel)]="listFilter" placeholder="Search product"  class="input is-rounded w-50">
 
 	<table class="table is-bordered is-fullwidth" *ngIf="filteredProducts?.length > 0">
-		<thead>
-			<tr>
-        <th>
-          Image
-        </th>
-				<th>
-					Name
-				</th>
-				<th>
-					Price
-				</th>
-				<th>
-					Created By
-				</th>
-				<th>
-					Action
-				</th>
-			</tr>
-		</thead>
-		<tbody>
-			<tr *ngFor="let product of filteredProducts">
-        <td>
-          <img [src]="product.picture.url" class="image is-128x128" [alt]="product.picture.name">
-        </td>
-				<td>
-					{{product.name}}
-				</td>
-				<td>
-					{{product.price}}
-				</td>
-				<td>
-					{{product.user?.username}}
-				</td>
-				<td>
-					Edit
-				</td>
-			</tr>
-		</tbody>
+      <thead>
+        <tr>
+          <th>
+            Image
+          </th>
+          <th>
+            Name
+          </th>
+          <th>
+            Price
+          </th>
+          <th>
+            Created By
+          </th>
+          <th>
+            Action
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let product of filteredProducts">
+          <td>
+            <img [src]="product.picture.url" class="image is-128x128" [alt]="product.picture.name">
+          </td>
+          <td>
+            {{product.name}}
+          </td>
+          <td>
+            {{product.price}}
+          </td>
+          <td>
+            {{product.user?.username}}
+          </td>
+          <td>
+            Edit
+          </td>
+        </tr>
+      </tbody>
 	</table>
 </div>
