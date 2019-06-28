@@ -9,21 +9,23 @@ import { ProductService } from './product.service';
 export class ProductComponent implements OnInit {
   products: any[];
   filteredProducts = [];
-  searchProduct: string;
+  private _listFilter: string;
   constructor(private productService: ProductService) { }
 
   ngOnInit() {
     this.productService.getProducts().subscribe(data => {
       this.products = data,
-        this.onFilterChange(this.searchProduct);
-      console.log(this.products)
+        this.performFilter(this.listFilter);
     })
   }
 
-  onFilterChange(filter: string) {
-    this.searchProduct = filter;
-    this.performFilter(this.searchProduct);
 
+  get listFilter(): string {
+    return this._listFilter;
+  }
+  set listFilter(value: string) {
+    this._listFilter = value;
+    this.performFilter(this.listFilter);
   }
 
   performFilter(filterBy?: string): void {
