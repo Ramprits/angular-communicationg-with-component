@@ -1,4 +1,5 @@
 <div class="container">
+	<input type="text" [ngModel]="searchProduct" (ngModelChange)="onFilterChange($event)"  class="input is-rounded w-50">
 	<table class="table is-bordered is-fullwidth">
 		<thead>
 			<tr>
@@ -16,5 +17,21 @@
 				</th>
 			</tr>
 		</thead>
+		<tbody>
+			<tr *ngFor="let product of filteredProducts">
+				<td>
+					{{product.name}}
+				</td>
+				<td>
+					{{product.price}}
+				</td>
+				<td>
+					{{product.user?.username}}
+				</td>
+				<td>
+					Edit
+				</td>
+			</tr>
+		</tbody>
 	</table>
 </div>
